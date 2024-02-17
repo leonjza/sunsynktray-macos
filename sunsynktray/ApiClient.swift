@@ -168,10 +168,6 @@ class ApiClient {
     }
     
     func login(u: String, p: String) async throws {
-        if (authToken != nil && authToken != "") {
-            return // already logged in
-        }
-        
         let authReq = AuthRequest(username: u, password: p)
         let auth: AuthResponse = try await post(endpoint: "/oauth/token", requestBody: authReq)
         
