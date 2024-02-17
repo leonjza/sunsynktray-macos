@@ -41,6 +41,7 @@
 		352278742B80C840000B9C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352278772B80C840000B9C5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		352278792B80C840000B9C5A /* SunSynkTrayHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SunSynkTrayHelper.entitlements; sourceTree = "<group>"; };
+		358A7BD32B80F1DF003A740C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		35C8EE9C2B7F34ED00D71E56 /* sunsynktray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunsynktray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C8EE9F2B7F34ED00D71E56 /* SunsynkTrayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsynkTrayApp.swift; sourceTree = "<group>"; };
 		35C8EEA32B7F34EF00D71E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		3522786F2B80C83D000B9C5A /* SunSynkTrayHelper */ = {
 			isa = PBXGroup;
 			children = (
+				358A7BD32B80F1DF003A740C /* Info.plist */,
 				352278702B80C83D000B9C5A /* SunSynkTrayHelperApp.swift */,
 				352278742B80C840000B9C5A /* Assets.xcassets */,
 				352278792B80C840000B9C5A /* SunSynkTrayHelper.entitlements */,
@@ -264,7 +266,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SunSynkTrayHelper/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,7 +296,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SunSynkTrayHelper/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
