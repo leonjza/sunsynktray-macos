@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		352278672B8084D3000B9C5A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352278662B8084D3000B9C5A /* SettingsView.swift */; };
+		352278692B8096D0000B9C5A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352278682B8096D0000B9C5A /* KeychainManager.swift */; };
+		352278712B80C83D000B9C5A /* SunSynkTrayHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352278702B80C83D000B9C5A /* SunSynkTrayHelperApp.swift */; };
+		352278752B80C840000B9C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352278742B80C840000B9C5A /* Assets.xcassets */; };
+		352278782B80C840000B9C5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352278772B80C840000B9C5A /* Preview Assets.xcassets */; };
+		3522787E2B80CA56000B9C5A /* SunSynkTrayHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3522786E2B80C83D000B9C5A /* SunSynkTrayHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		35C8EEA02B7F34ED00D71E56 /* SunsynkTrayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C8EE9F2B7F34ED00D71E56 /* SunsynkTrayApp.swift */; };
+		35C8EEA42B7F34EF00D71E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C8EEA32B7F34EF00D71E56 /* Assets.xcassets */; };
+		35C8EEA72B7F34EF00D71E56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C8EEA62B7F34EF00D71E56 /* Preview Assets.xcassets */; };
+		35C8EEB02B7F3BA300D71E56 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C8EEAF2B7F3BA300D71E56 /* MenuBar.swift */; };
+		35C8EEB42B7F60D400D71E56 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C8EEB32B7F60D400D71E56 /* ApiClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3522787D2B80CA3E000B9C5A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				3522787E2B80CA56000B9C5A /* SunSynkTrayHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		352278662B8084D3000B9C5A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		352278682B8096D0000B9C5A /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		3522786E2B80C83D000B9C5A /* SunSynkTrayHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunSynkTrayHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		352278702B80C83D000B9C5A /* SunSynkTrayHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunSynkTrayHelperApp.swift; sourceTree = "<group>"; };
+		352278742B80C840000B9C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		352278772B80C840000B9C5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		352278792B80C840000B9C5A /* SunSynkTrayHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SunSynkTrayHelper.entitlements; sourceTree = "<group>"; };
+		35C8EE9C2B7F34ED00D71E56 /* sunsynktray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunsynktray.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C8EE9F2B7F34ED00D71E56 /* SunsynkTrayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsynkTrayApp.swift; sourceTree = "<group>"; };
+		35C8EEA32B7F34EF00D71E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35C8EEA62B7F34EF00D71E56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		35C8EEA82B7F34EF00D71E56 /* sunsynktray.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sunsynktray.entitlements; sourceTree = "<group>"; };
+		35C8EEAE2B7F39F500D71E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		35C8EEAF2B7F3BA300D71E56 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		35C8EEB32B7F60D400D71E56 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3522786B2B80C83D000B9C5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35C8EE992B7F34ED00D71E56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3522786F2B80C83D000B9C5A /* SunSynkTrayHelper */ = {
+			isa = PBXGroup;
+			children = (
+				352278702B80C83D000B9C5A /* SunSynkTrayHelperApp.swift */,
+				352278742B80C840000B9C5A /* Assets.xcassets */,
+				352278792B80C840000B9C5A /* SunSynkTrayHelper.entitlements */,
+				352278762B80C840000B9C5A /* Preview Content */,
+			);
+			path = SunSynkTrayHelper;
+			sourceTree = "<group>";
+		};
+		352278762B80C840000B9C5A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				352278772B80C840000B9C5A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		35C8EE932B7F34ED00D71E56 = {
+			isa = PBXGroup;
+			children = (
+				35C8EE9E2B7F34ED00D71E56 /* sunsynktray */,
+				3522786F2B80C83D000B9C5A /* SunSynkTrayHelper */,
+				35C8EE9D2B7F34ED00D71E56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35C8EE9D2B7F34ED00D71E56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35C8EE9C2B7F34ED00D71E56 /* sunsynktray.app */,
+				3522786E2B80C83D000B9C5A /* SunSynkTrayHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35C8EE9E2B7F34ED00D71E56 /* sunsynktray */ = {
+			isa = PBXGroup;
+			children = (
+				35C8EEAE2B7F39F500D71E56 /* Info.plist */,
+				35C8EE9F2B7F34ED00D71E56 /* SunsynkTrayApp.swift */,
+				35C8EEAF2B7F3BA300D71E56 /* MenuBar.swift */,
+				352278662B8084D3000B9C5A /* SettingsView.swift */,
+				352278682B8096D0000B9C5A /* KeychainManager.swift */,
+				35C8EEB32B7F60D400D71E56 /* ApiClient.swift */,
+				35C8EEA32B7F34EF00D71E56 /* Assets.xcassets */,
+				35C8EEA82B7F34EF00D71E56 /* sunsynktray.entitlements */,
+				35C8EEA52B7F34EF00D71E56 /* Preview Content */,
+			);
+			path = sunsynktray;
+			sourceTree = "<group>";
+		};
+		35C8EEA52B7F34EF00D71E56 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				35C8EEA62B7F34EF00D71E56 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3522786D2B80C83D000B9C5A /* SunSynkTrayHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3522787A2B80C840000B9C5A /* Build configuration list for PBXNativeTarget "SunSynkTrayHelper" */;
+			buildPhases = (
+				3522786A2B80C83D000B9C5A /* Sources */,
+				3522786B2B80C83D000B9C5A /* Frameworks */,
+				3522786C2B80C83D000B9C5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunSynkTrayHelper;
+			productName = SunSynkTrayHelper;
+			productReference = 3522786E2B80C83D000B9C5A /* SunSynkTrayHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		35C8EE9B2B7F34ED00D71E56 /* sunsynktray */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35C8EEAB2B7F34EF00D71E56 /* Build configuration list for PBXNativeTarget "sunsynktray" */;
+			buildPhases = (
+				35C8EE982B7F34ED00D71E56 /* Sources */,
+				35C8EE992B7F34ED00D71E56 /* Frameworks */,
+				35C8EE9A2B7F34ED00D71E56 /* Resources */,
+				3522787D2B80CA3E000B9C5A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sunsynktray;
+			productName = sunsynktray;
+			productReference = 35C8EE9C2B7F34ED00D71E56 /* sunsynktray.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35C8EE942B7F34ED00D71E56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					3522786D2B80C83D000B9C5A = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					35C8EE9B2B7F34ED00D71E56 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 35C8EE972B7F34ED00D71E56 /* Build configuration list for PBXProject "sunsynktray" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 35C8EE932B7F34ED00D71E56;
+			productRefGroup = 35C8EE9D2B7F34ED00D71E56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35C8EE9B2B7F34ED00D71E56 /* sunsynktray */,
+				3522786D2B80C83D000B9C5A /* SunSynkTrayHelper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3522786C2B80C83D000B9C5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				352278782B80C840000B9C5A /* Preview Assets.xcassets in Resources */,
+				352278752B80C840000B9C5A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35C8EE9A2B7F34ED00D71E56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35C8EEA72B7F34EF00D71E56 /* Preview Assets.xcassets in Resources */,
+				35C8EEA42B7F34EF00D71E56 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3522786A2B80C83D000B9C5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				352278712B80C83D000B9C5A /* SunSynkTrayHelperApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35C8EE982B7F34ED00D71E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				352278672B8084D3000B9C5A /* SettingsView.swift in Sources */,
+				35C8EEA02B7F34ED00D71E56 /* SunsynkTrayApp.swift in Sources */,
+				35C8EEB02B7F3BA300D71E56 /* MenuBar.swift in Sources */,
+				35C8EEB42B7F60D400D71E56 /* ApiClient.swift in Sources */,
+				352278692B8096D0000B9C5A /* KeychainManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3522787B2B80C840000B9C5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SunSynkTrayHelper/SunSynkTrayHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SunSynkTrayHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = 8AH3PS2AS7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonjza.SunSynkTrayHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3522787C2B80C840000B9C5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SunSynkTrayHelper/SunSynkTrayHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SunSynkTrayHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = 8AH3PS2AS7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonjza.SunSynkTrayHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		35C8EEA92B7F34EF00D71E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		35C8EEAA2B7F34EF00D71E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		35C8EEAC2B7F34EF00D71E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = sunsynktray/sunsynktray.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"sunsynktray/Preview Content\"";
+				DEVELOPMENT_TEAM = 8AH3PS2AS7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = sunsynktray/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = Yes;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonjza.sunsynktray;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		35C8EEAD2B7F34EF00D71E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = sunsynktray/sunsynktray.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"sunsynktray/Preview Content\"";
+				DEVELOPMENT_TEAM = 8AH3PS2AS7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = sunsynktray/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = Yes;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonjza.sunsynktray;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3522787A2B80C840000B9C5A /* Build configuration list for PBXNativeTarget "SunSynkTrayHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3522787B2B80C840000B9C5A /* Debug */,
+				3522787C2B80C840000B9C5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35C8EE972B7F34ED00D71E56 /* Build configuration list for PBXProject "sunsynktray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35C8EEA92B7F34EF00D71E56 /* Debug */,
+				35C8EEAA2B7F34EF00D71E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35C8EEAB2B7F34EF00D71E56 /* Build configuration list for PBXNativeTarget "sunsynktray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35C8EEAC2B7F34EF00D71E56 /* Debug */,
+				35C8EEAD2B7F34EF00D71E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35C8EE942B7F34ED00D71E56 /* Project object */;
+}
