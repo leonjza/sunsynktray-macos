@@ -13,7 +13,7 @@ xcodebuild clean archive -project "sunsynktray.xcodeproj" -scheme "sunsynktray" 
 
 echo " |- Preparing DMG working directory"
 mkdir $BUILD_DIR/dmg
-cp -r $BUILD_DIR/SunSynkTray.xcarchive/Products/Applications/sunsynktray.app $BUILD_DIR/dmg
+cp -r $BUILD_DIR/SunSynkTray.xcarchive/Products/Applications/sunsynktray.app $BUILD_DIR/dmg/SunSynkTray.app
 ln -s /Applications $BUILD_DIR/dmg/Applications
 
 echo " |- Building .dmg"
