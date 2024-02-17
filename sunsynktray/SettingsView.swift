@@ -85,10 +85,14 @@ struct SettingsView: View {
                 Text(stateMessage)
                     .padding(.leading, 10)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text(feedbackMessage)
-                    .padding(.leading, 10)
-                    .padding(.bottom, 10)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                HStack {
+                    Text(feedbackMessage)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(VERSION)
+                        .padding(.trailing, 10)
+                }
+                .padding(.leading, 10)
+                .padding(.bottom, 10)
             }
         }
     }

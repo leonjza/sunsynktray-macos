@@ -1,6 +1,8 @@
 import SwiftUI
 import AppKit
 
+var VERSION = "1.0.0"
+
 @main
 struct SunsynkTrayApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -47,7 +49,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     do {
                         try await ApiClient.shared.login(u: username, p: password)
                     } catch {
-                        print(error)
+                        MenuBar.shared.updateTrayIcon(with: "!")
+                        MenuBar.shared.updateToolTip(with: error.localizedDescription)
                     }
                 }
             } else {
@@ -57,10 +60,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         Task {
             do {
-                let energy = try await ApiClient.shared.energyFlow(plantId: plantid)
-                MenuBar.shared.updateTrayIcon(with: String(Int(energy.soc)))
+                let info = try await ApiClient.shared.energyFlow(plantId: plantid)
+                MenuBar.shared.updateTrayIcon(with: String(Int(info.soc)))
+                MenuBar.shared.updateToolTip(with: "Status: PV = \(info.pvPower)W, Batt = \(info.battPower)W, " +
+                                                   "Grid = \(info.gridOrMeterPower)W, Load = \(info.loadOrEpsPower)W, SOC = \(info.soc)")
             } catch {
-                print(error)
+                MenuBar.shared.updateTrayIcon(with: "!")
+                MenuBar.shared.updateToolTip(with: error.localizedDescription)
             }
         }
     }

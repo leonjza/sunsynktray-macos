@@ -53,7 +53,9 @@ class MenuBar: NSObject {
     }
     
     func updateToolTip(with text: String) {
-        statusBar.button?.toolTip = "SynSynkTray: \(text)"
+        DispatchQueue.main.async { [self] in
+            statusBar.button?.toolTip = "SynSynkTray: \(text)"
+        }
     }
     
     @objc func toggleSettings() {
