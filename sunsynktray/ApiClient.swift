@@ -172,6 +172,7 @@ class ApiClient {
     }
 
     struct EnergyFlowResponseData: Codable {
+        var custCode: Int // can be used to check for errors
         var pvPower: Int
         var battPower: Int
         var gridOrMeterPower: Int

@@ -59,6 +59,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Task {
             do {
                 let info = try await ApiClient.shared.energyFlow(plantId: plantid)
+
+                // sometimes, the api has no data, even though no errore have occured.
+                // some of the energy values we use can be 0, but the custCode does not
+                // appear to be energy related, so use that to check if the response
+                // is may be broken.
+                if (info.custCode == 0) {
+                    return
+                }
+
                 MenuBar.shared.updateTrayIcon(with: String(Int(info.soc)))
                 MenuBar.shared.updateToolTip(with: "Status: PV = \(info.pvPower)W, Batt = \(info.battPower)W, " +
                                                    "Grid = \(info.gridOrMeterPower)W, Load = \(info.loadOrEpsPower)W, SOC = \(info.soc)")
