@@ -48,10 +48,11 @@ struct SettingsView: View {
                             setLaunchAtStartup(enabled: enabled)
                         }
                 }
+                .frame(minWidth: 200, maxWidth: 200)
                 .padding()
                 .disabled(isFetching)
                 
-                // Right side for displaying a list of items
+                // Right side for displaying a list of plants
                 if isFetching {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
