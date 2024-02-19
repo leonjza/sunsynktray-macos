@@ -3,6 +3,7 @@ import ServiceManagement
 
 struct SettingsView: View {
     
+    @State private var versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown"
     @State private var launchAtStartup = UserDefaults.standard.bool(forKey: "launchAtStartup")
     
     @State private var username: String = UserDefaults.standard.string(forKey: "lastUsername") ?? ""
@@ -89,7 +90,7 @@ struct SettingsView: View {
                 HStack {
                     Text(feedbackMessage)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(VERSION)
+                    Text(versionNumber)
                         .padding(.trailing, 10)
                 }
                 .padding(.leading, 10)

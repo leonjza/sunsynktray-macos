@@ -1,8 +1,6 @@
 import SwiftUI
 import AppKit
 
-var VERSION = "1.0.0"
-
 @main
 struct SunsynkTrayApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
