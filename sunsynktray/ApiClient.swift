@@ -21,13 +21,14 @@ class ApiClient {
     private let baseUrl = URL(string: "https://api.sunsynk.net")!
     private var authToken: String?
     private var refreshToken: String?
-    private var expiresIn: Int?
+    private var expiresAt: Date!
     
     private let session: URLSession
     
     enum ApiError: Error {
         case requestFailed(reason: String)
         case notAuthenticated
+        case noRefreshToken
     }
     
     private init() {
@@ -58,6 +59,10 @@ class ApiClient {
             throw ApiError.notAuthenticated
         }
         
+        if (!authTokenIsValid()) {
+            try await refreshAccessToken()
+        }
+
         var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false)!
         
         urlComponents.path = endpoint
@@ -121,7 +126,7 @@ class ApiClient {
     struct AuthResponse: Codable {
         var data: AuthResponseData
     }
-    
+
     struct AuthResponseData: Codable {
         var access_token: String
         var token_type: String
@@ -129,28 +134,43 @@ class ApiClient {
         var expires_in: Int
         var scope: String
     }
-    
+
+    struct RefreshAuthRequest: Codable {
+        var grant_type: String = "refresh_token"
+        var refresh_token: String
+    }
+
+    struct RefreshAuthResponse: Codable {
+        var data: RefreshAuthResponseData
+    }
+
+    struct RefreshAuthResponseData: Codable {
+        var access_token: String
+        var refresh_token: String
+        var expires_in: Int
+    }
+
     struct PlantsResponse: Codable {
         var data: PlantsResponseData?
     }
-    
+
     struct PlantsResponseData: Codable {
         var pageSize: Int
         var pageNumber: Int
         var total: Int
         var infos: [PlantsResponseDataInfo]?
     }
-    
+
     struct PlantsResponseDataInfo: Codable, Identifiable {
         var id: Int
         var name: String
         var updateAt: Date
     }
-    
+
     struct EnergyFlowResponse: Codable {
         var data: EnergyFlowResponseData?
     }
-    
+
     struct EnergyFlowResponseData: Codable {
         var pvPower: Int
         var battPower: Int
@@ -158,7 +178,7 @@ class ApiClient {
         var loadOrEpsPower: Int
         var soc: Float
     }
-    
+
     func isAuthenticated() -> Bool {
         if (authToken == nil || authToken == "") {
             return false
@@ -166,22 +186,47 @@ class ApiClient {
         
         return true
     }
-    
+
+    func authTokenIsValid() -> Bool {
+        if (expiresAt == nil) {
+            return false
+        }
+        
+        if (expiresAt > Date()) {
+            return true
+        }
+        
+        return false
+    }
+
     func login(u: String, p: String) async throws {
         let authReq = AuthRequest(username: u, password: p)
         let auth: AuthResponse = try await post(endpoint: "/oauth/token", requestBody: authReq)
         
         authToken = auth.data.access_token
         refreshToken = auth.data.refresh_token
-        expiresIn = auth.data.expires_in
+        expiresAt = Date().addingTimeInterval(TimeInterval(auth.data.expires_in - 5))
     }
-    
+
+    func refreshAccessToken() async throws {
+        if (refreshToken == nil || refreshToken == "") {
+            throw ApiError.noRefreshToken
+        }
+        
+        let refreshReq = RefreshAuthRequest(refresh_token: refreshToken!)
+        let auth: RefreshAuthResponse = try await post(endpoint: "/oauth/token", requestBody: refreshReq)
+        
+        authToken = auth.data.access_token
+        refreshToken = auth.data.refresh_token
+        expiresAt = Date().addingTimeInterval(TimeInterval(auth.data.expires_in - 5))
+    }
+
     func plants() async throws -> [PlantsResponseDataInfo] {
         let plants: PlantsResponse = try await get(endpoint: "/api/v1/plants", 
                                                    parameters: ["page": "1", "limit": "10", "name": "", "status": ""])
         return (plants.data?.infos)!
     }
-    
+
     func energyFlow(plantId: Int) async throws -> EnergyFlowResponseData {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
