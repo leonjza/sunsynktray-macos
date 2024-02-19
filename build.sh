@@ -7,6 +7,8 @@ TARGET_DMG=SunSynkTray.dmg
 
 echo " |- Cleaning build directory"
 rm -Rf $BUILD_DIR
+echo " |- Removing existing .dmg"
+rm SunSynkTray.dmg
 
 echo " |- Building project"
 xcodebuild clean archive -project "sunsynktray.xcodeproj" -scheme "sunsynktray" -configuration "Release" -destination "generic/platform=macOS,name=Any Mac" -archivePath $BUILD_DIR/SunSynkTray.xcarchive
