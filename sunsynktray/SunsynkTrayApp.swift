@@ -60,10 +60,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             do {
                 let info = try await ApiClient.shared.energyFlow(plantId: plantid)
 
-                // sometimes, the api has no data, even though no errore have occured.
+                // sometimes, the api has no data, even though no errors have occured.
                 // some of the energy values we use can be 0, but the custCode does not
                 // appear to be energy related, so use that to check if the response
-                // is may be broken.
+                // may be broken.
                 if (info.custCode == 0) {
                     return
                 }
